@@ -5,543 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thomas R. Adams — Songwriter Portfolio</title>
   <style>
-    :root {
-      --bg: #07090d;
-      --bg-alt: #11141b;
-      --accent: #1e88e5;
-      --accent-soft: rgba(30, 136, 229, 0.16);
-      --text-main: #f2f2f2;
-      --text-muted: #a3a9b7;
-      --border-subtle: #1f2430;
-      --card-radius: 14px;
-      --max-width: 900px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      background: #0f1115;
+      font-family: Arial, sans-serif;
+      color: #e4e4e4;
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #141827 0, #050609 50%, #050609 100%);
-      color: var(--text-main);
-      text-align: left;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      padding: 32px 18px 60px;
+      padding: 0;
+      text-align: center;
     }
 
     header {
-      padding: 18px 0 10px;
-      border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .logo-line {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .name-line {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      padding: 60px 20px 40px 20px;
     }
 
     h1 {
-      font-size: 2.1rem;
-      margin: 0;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
       font-weight: 600;
     }
 
-    .tagline {
-      font-size: 0.98rem;
-      color: var(--text-muted);
+    h2 {
+      font-size: 1.4rem;
+      opacity: 0.85;
+      margin-bottom: 24px;
     }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
+    p {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto 18px auto;
+      line-height: 1.6;
+      font-size: 1.03rem;
+      opacity: 0.9;
     }
 
-    .pill {
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.01);
-    }
-
-    .pill--accent {
-      border-color: var(--accent-soft);
-      background: var(--accent-soft);
-      color: #e4f1ff;
-    }
-
-    .hero {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr);
-      gap: 22px;
-    }
-
-    .hero-text p {
-      margin: 0 0 16px 0;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border-radius: 999px;
-      padding: 11px 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .btn-primary span {
-      font-size: 1.1rem;
-      margin-top: -1px;
-    }
-
-    .btn-ghost {
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-size: 0.88rem;
-      border: 1px solid var(--border-subtle);
-      background: rgba(0, 0, 0, 0.2);
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .btn {
+      background: #1e88e5;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 22px 0 10px 0;
+      font-weight: bold;
     }
 
     .section {
-      margin-top: 32px;
-      padding: 22px 18px 20px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.2));
-      border-radius: var(--card-radius);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7);
+      padding: 40px 20px 50px 20px;
+      border-top: 1px solid #222;
+      margin-top: 30px;
     }
 
-    .section + .section {
-      margin-top: 20px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .section-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .song-list {
+    ul {
       list-style: none;
       padding: 0;
+      font-size: 1.05rem;
+      line-height: 1.9;
       margin: 0;
-      display: grid;
-      gap: 14px;
     }
 
-    .song-item {
-      padding: 10px 0 6px;
-      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    ul li {
+      margin-bottom: 4px;
     }
 
-    .song-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
+    a {
+      color: #e4e4e4;
     }
 
-    .song-title {
-      font-size: 1rem;
-      font-weight: 540;
+    .song-link {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
     }
 
-    .song-tag {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-    }
-
-    .song-desc {
-      margin-top: 4px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .song-links {
-      margin-top: 6px;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-
-    .song-links a {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .about-text p {
-      margin: 0 0 10px 0;
-      font-size: 0.94rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-
-    .about-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .contact-note {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-top: 10px;
+    .song-link:hover {
+      border-bottom: 1px solid #1e88e5;
     }
 
     footer {
-      margin-top: 26px;
-      padding: 12px 4px 0;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    footer a {
-      color: var(--text-muted);
-      text-decoration: underline;
-    }
-
-    @media (min-width: 720px) {
-      .container {
-        padding: 42px 24px 80px;
-      }
-
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      }
-
-      .section {
-        padding: 24px 24px 22px;
-      }
+      margin-top: 20px;
+      padding: 25px;
+      font-size: 0.9rem;
+      opacity: 0.6;
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <main class="container">
-      <!-- HEADER / HERO -->
-      <header>
-        <div class="name-line">
-          <div class="logo-line">Songwriter Portfolio</div>
-          <h1>Thomas R. Adams</h1>
-          <div class="tagline">
-            Songwriter · Storyteller · Americana / Country / Neo-Soul Fusion
-          </div>
-          <div class="pill-row">
-            <span class="pill pill--accent">Pitch-ready originals</span>
-            <span class="pill">Country · Americana</span>
-            <span class="pill">R&B / Soul influenced</span>
-            <span class="pill">Narrative lyrics & melody focus</span>
-          </div>
-        </div>
+  <header>
+    <h1>Thomas R. Adams</h1>
+    <h2>Songwriter • Storyteller • Americana / Neo-Soul / Country Fusion</h2>
 
-        <div class="hero hero-text">
-          <p>
-            Thomas R. Adams writes from the intersections of small-town
-            storytelling, soul, and modern country. His catalog ranges
-            from intimate heartbreak (“She’d Believe”) to spiritual
-            nostalgia (“Sunday Psalms”) and groove-driven slow jams
-            (“Sun Rays”).
-          </p>
-          <p>
-            This page highlights ten representative songs across
-            styles — all written to be cut, covered, or developed in
-            collaboration with artists, publishers, and producers.
-          </p>
-          <div class="button-row">
-            <a class="btn-primary" href="mailto:tadamsrmusic@proton.me">
-              <span>✉️</span> Contact for Pitches / Cuts
-            </a>
-            <a class="btn-ghost" href="#songs">View Song List ↓</a>
-          </div>
-        </div>
-      </header>
+    <p>
+      A versatile modern songwriter blending Southern storytelling, soul,
+      and Americana roots. From emotional ballads like <em>She’d Believe</em>
+      to the groove-rich slow jam <em>Sun Rays</em>, Thomas writes with
+      imagery-forward lyrics and melody-first craft — aiming to connect
+      across genres, artists, and audiences.
+    </p>
 
-      <!-- SONG PORTFOLIO -->
-      <section id="songs" class="section">
-        <div class="section-header">
-          <div class="section-title">Song Portfolio · Top 10</div>
-          <div class="section-meta">All songs written by Thomas R. Adams</div>
-        </div>
+    <a class="btn" href="mailto:tadamsrmusic@proton.me">
+      Contact for Publishing / Cuts
+    </a>
+  </header>
 
-        <ul class="song-list">
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">She’d Believe</div>
-              <div class="song-tag">Country · Heartbreak Ballad</div>
-            </div>
-            <div class="song-desc">
-              A regret-soaked confession from a man who knows he waited
-              too long to change. Classic emotional country with vivid
-              details and a strong, memorable hook built around “I’d be
-              a fool… to think she’d believe.”
-            </div>
-            <div class="song-links">
-              Demo: <em>Available (rough acoustic)</em>
-              <!-- When ready, replace with:
-              Demo: <a href="LINK_HERE" target="_blank">Listen</a>
-              -->
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Sun Rays</div>
-              <div class="song-tag">R&B · Soul · Slow Jam</div>
-            </div>
-            <div class="song-desc">
-              Neo-soul / retro-R&B slow jam that compares a former love
-              to shifting light through seasons. Smooth, romantic, and
-              groove-ready with visual lyrics — ideal for a soulful male
-              or female vocal.
-            </div>
-            <div class="song-links">
-              Demo: <em>Pending studio-style acoustic</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Tea</div>
-              <div class="song-tag">Indie Soul · Love Song</div>
-            </div>
-            <div class="song-desc">
-              A cozy, playful love song built on domestic imagery:
-              rainy-day windshields, dancing in the living room, and
-              candy-sweet metaphors. Intimate and hooky, suitable for
-              pop, indie, or sync-friendly productions.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">GodSpeed</div>
-              <div class="song-tag">Bluegrass / Country · Uplift</div>
-            </div>
-            <div class="song-desc">
-              A runaway redemption song — outrunning demons with “wings
-              in a suitcase” and fueled by a prayer. Written for an
-              energetic bluegrass / country band with strong chorus
-              lift.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">A Short Melody</div>
-              <div class="song-tag">Folk · Reflective</div>
-            </div>
-            <div class="song-desc">
-              Introspective folk piece in the spirit of Townes Van
-              Zandt — a reminder that time is short and you can’t hang
-              onto the rope forever. Minimal, poetic, and very
-              lyric-driven.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">I Need a Keith Whitley Song</div>
-              <div class="song-tag">Traditional Country · Tribute</div>
-            </div>
-            <div class="song-desc">
-              A modern barroom prayer wrapped in classic references:
-              Whitley, Willie, Faron Young, Jerry Jeff Walker. Tailored
-              for hardcore country listeners and artists who live in
-              that tradition.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Your Man</div>
-              <div class="song-tag">Country · Modern Love</div>
-            </div>
-            <div class="song-desc">
-              A working-class love song about burnout, self-doubt, and
-              finally becoming the man she deserves. Mid-tempo modern
-              country with a strong chorus payoff: “Until I became your
-              man.”
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Stale Cigarettes</div>
-              <div class="song-tag">Country · Gritty Story Song</div>
-            </div>
-            <div class="song-desc">
-              Cinematic chase through rain, smoke, and bad habits.
-              “Rain-soaked butts in my pocket” and “burning up my lungs
-              before I hit that 24” set a vivid scene for an outlaw-
-              leaning production.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Sunday Psalms</div>
-              <div class="song-tag">Country · Spiritual Nostalgia</div>
-            </div>
-            <div class="song-desc">
-              A warm, faith-rooted song about cigarettes, coffee, small-town
-              church, and trying to get life back on track. Perfect for
-              a heartfelt country artist looking for a spiritual but
-              grounded cut.
-            </div>
-            <div class="song-links">
-              Demo: <em>Acoustic demo available</em>
-            </div>
-          </li>
-
-          <li class="song-item">
-            <div class="song-header">
-              <div class="song-title">Memory Worth Remembering</div>
-              <div class="song-tag">Country · Emotional Mid-tempo</div>
-            </div>
-            <div class="song-desc">
-              Built around the central idea of wanting to be “a memory
-              worth remembering” — postcards, VHS tapes, hand-me-down
-              tools. A strong concept song with multiple visual hooks
-              for modern or traditional country production.
-            </div>
-            <div class="song-links">
-              Demo: <em>To be recorded</em>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- ABOUT / CONTACT -->
-      <section class="section">
-        <div class="section-header">
-          <div class="section-title">About & Contact</div>
-        </div>
-        <div class="about-text">
-          <p>
-            Thomas R. Adams is a Pennsylvania-based songwriter balancing
-            full-time work, grad-school, and late-night writing sessions.
-            His catalog spans classic country, Americana, folk, and
-            soul-influenced slow jams — all built on narrative lyrics,
-            emotional honesty, and strong melodic hooks.
-          </p>
-          <p>
-            He is actively seeking relationships with publishers, artists,
-            producers, and collaborators looking for fresh material with
-            a roots-driven, story-first approach.
-          </p>
-        </div>
-        <div class="button-row" style="margin-top:16px;">
-          <a class="btn-primary" href="mailto:tadamsrmusic@proton.me">
-            <span>✉️</span> Email: tadamsrmusic@proton.me
-          </a>
-        </div>
-        <div class="contact-note">
-          Demos are available upon request. Please include which song(s)
-          you’re interested in and whether you’re an artist, publisher,
-          producer, or rep.
-        </div>
-      </section>
-
-      <footer>
-        © 2025 Thomas R. Adams — All rights reserved. This page is for
-        professional pitching and listening purposes only.
-      </footer>
-    </main>
+  <div class="section" id="songs">
+    <h2>🎵 Song Catalog — Top 10</h2>
+    <p>Click a title to view full lyrics and details.</p>
+    <ul>
+      <li>• <a class="song-link" href="shed-believe.html">She’d Believe</a></li>
+      <li>• <a class="song-link" href="sun-rays.html">Sun Rays</a></li>
+      <li>• <a class="song-link" href="tea.html">Tea</a></li>
+      <li>• <a class="song-link" href="godspeed.html">GodSpeed</a></li>
+      <li>• <a class="song-link" href="a-short-melody.html">A Short Melody</a></li>
+      <li>• <a class="song-link" href="keith-whitley-song.html">I Need a Keith Whitley Song</a></li>
+      <li>• <a class="song-link" href="your-man.html">Your Man</a></li>
+      <li>• <a class="song-link" href="stale-cigarettes.html">Stale Cigarettes</a></li>
+      <li>• <a class="song-link" href="sunday-psalms.html">Sunday Psalms</a></li>
+      <li>• <a class="song-link" href="memory-worth-remembering.html">Memory Worth Remembering</a></li>
+    </ul>
   </div>
+
+  <div class="section" id="about">
+    <h2>👤 About Thomas</h2>
+    <p>
+      Thomas R. Adams is a Pennsylvania-based songwriter who lives in the
+      world between blue-collar country, modern Americana, and neo-soul.
+      His writing leans on vivid images — coal dust, Sunday pews, cigarette
+      butts, kitchen tables — and turns them into emotionally honest hooks.
+    </p>
+    <p>
+      Influenced by artists like Jason Isbell, Chris Stapleton, Billy Strings,
+      Townes Van Zandt, and Sam Cooke, Thomas gravitates toward songs that feel
+      lived-in: heartbreak without self-pity, faith without preaching, love
+      without clichés. He writes with artists, publishers, and producers in mind,
+      aiming for songs that can live on records, on radio, and on stage.
+    </p>
+    <p>
+      Open to cuts, co-writes, and catalog discussions — Thomas is building a
+      body of work that can move easily from Nashville to sync to independent
+      releases, while still sounding unmistakably like his own voice.
+    </p>
+  </div>
+
+  <div class="section" id="demos">
+    <h2>🎧 Demo Recordings</h2>
+    <p>
+      Full demo links and worktapes are available on request, including
+      recordings of <em>She’d Believe</em>, <em>Sunday Psalms</em>,
+      and additional catalog songs. For private streaming links or
+      lyric PDFs, please reach out directly.
+    </p>
+    <p>
+      For access or specific pitch needs (tempo, key, theme, artist style),
+      email:
+      <a href="mailto:tadamsrmusic@proton.me">tadamsrmusic@proton.me</a>
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Thomas R. Adams — All Rights Reserved.
+  </footer>
 </body>
 </html>
